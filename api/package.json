@@ -1,0 +1,28 @@
+{
+    "name": "api",
+    "version": "1.0.0",
+    "description": "Social Media Website",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Nitik Narang",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.19.0",
+        "cheerio": "^1.0.0-rc.10",
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "helmet": "^4.6.0",
+        "html-pdf": "^3.0.1",
+        "mongoose": "^6.0.7",
+        "morgan": "^1.10.0",
+        "multer": "^1.4.3",
+        "nodemon": "^2.0.15",
+        "path": "^0.12.7",
+        "request": "^2.88.2"
+    }
+}
