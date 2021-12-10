@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
 .topbarContainer {
-  height: 50px;
+  height: 60px;
   width: 100%;
   background-image: linear-gradient(to bottom right, rgb(54, 248, 238), rgb(12, 172, 184));
   /* background-color: #1877f2; */
@@ -15,9 +16,10 @@
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 40px;
   margin-left: 20px;
   font-weight: bold;
+  font-family: 'Grand Hotel', cursive;
   color: white;
   cursor: pointer;
 }
@@ -100,7 +102,11 @@
 .logoutb {
   width: 70px;
   margin-bottom: 5px;
-  padding-bottom: 2px;
+  padding-bottom: 1.4px;
+  border-radius: 40px;
+  background-image: linear-gradient(to right,#850f0f,#f39a84);
+  color:white;
+  font-weight:400;
 }
 .scontainer {
   /* background-color: red; */

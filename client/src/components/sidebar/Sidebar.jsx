@@ -10,11 +10,16 @@ import {
   Event,
   School,
 } from "@material-ui/icons";
+import EditOffIcon from '@mui/icons-material/EditOff';
+import WorkIcon from '@mui/icons-material/Work';
+import KeyboardIcon from '@mui/icons-material/Keyboard';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import { Users } from "../../dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import Keyboard from "@mui/icons-material/Keyboard";
 
 
 export default function Sidebar() {
@@ -38,41 +43,31 @@ const username = currentUser.username;
           </Link>
           <Link to="/ide" style={{ textDecoration: "none" }}>
             <li className="sidebarListItem">
-              <Chat className="sidebarIcon" />
+              <EditOffIcon className="sidebarIcon" />
               <span className="sidebarListItemText">IDE</span>
             </li>{" "}
           </Link>
 
           <Link to={{ pathname: `/resumeBuilder/${currentUser._id}` }}  style={{ textDecoration: "none" }}>
             <li className="sidebarListItem">
-              <Chat className="sidebarIcon" />
+              <AssignmentIndIcon className="sidebarIcon" />
               <span className="sidebarListItemText">Resume Builder</span>
             </li>{" "}
           </Link>
           <Link to="/openboard" style={{ textDecoration: "none" }}>
             <li className="sidebarListItem">
-              <Chat className="sidebarIcon" />
+            <KeyboardIcon className="sidebarIcon" />
               <span className="sidebarListItemText">Open Board</span>
             </li>{" "}
           </Link>
           <Link to="/jobs" style={{ textDecoration: "none" }}>
             <li className="sidebarListItem">
-              <Chat className="sidebarIcon" />
+              <WorkIcon className="sidebarIcon" />
               <span className="sidebarListItemText">Jobs</span>
             </li>{" "}
           </Link>
-          <li className="sidebarListItem">
-            <PlayCircleFilledOutlined className="sidebarIcon" />
-            <span className="sidebarListItemText">Videos</span>
-          </li>
-          <li className="sidebarListItem">
-            <Group className="sidebarIcon" />
-            <span className="sidebarListItemText">Groups</span>
-          </li>
-          <li className="sidebarListItem">
-            <Bookmark className="sidebarIcon" />
-            <span className="sidebarListItemText">Bookmarks</span>
-          </li>
+          
+          
           <li className="sidebarListItem">
             <HelpOutline className="sidebarIcon" />
             <Link
@@ -83,18 +78,8 @@ const username = currentUser.username;
               <span className="sidebarListItemText">Contact Admin</span>
             </Link>
           </li>
-          <li className="sidebarListItem">
-            <WorkOutline className="sidebarIcon" />
-            <span className="sidebarListItemText">Jobs</span>
-          </li>
-          <li className="sidebarListItem">
-            <Event className="sidebarIcon" />
-            <span className="sidebarListItemText">Events</span>
-          </li>
-          <li className="sidebarListItem">
-            <School className="sidebarIcon" />
-            <span className="sidebarListItemText">Courses</span>
-          </li>
+          
+       
         </ul>
         <button className="sidebarButton">Show More</button>
 
