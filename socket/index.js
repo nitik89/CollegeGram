@@ -1,6 +1,6 @@
-const io = require("socket.io")(process.env.PORT || 8900, {
+const io = require("socket.io")(8900, {
   cors: {
-    origin: "https://socialguruji.herokuapp.com/",
+    origin: "http://localhost:3000",
   },
 });
 
@@ -32,12 +32,11 @@ io.on("connection", (socket) => {
   //send and get message
   socket.on("sendMessage", ({ senderId, receiverId, text }) => {
     const user = getUser(receiverId);
-    if (user) {
-      io.to(user.socketId).emit("getMessage", {
-        senderId,
-        text,
-      });
-    }
+    console.log(user);
+    io.to(user.socketId).emit("getMessage", {
+      senderId,
+      text,
+    });
   });
 
   //when disconnect
