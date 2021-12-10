@@ -9,30 +9,43 @@ let url="https://geeksgod.com/category/campus-drives/";
 let request=require("request");
 let cheerio=require("cheerio");
 const { fstat } = require("fs");
+
 //REGISTER
+let c=0;
 const options = {
 	height: "42cm",
 	width: "29.7cm",
-	timeout: "6000",
+	timeout: '100000',
 };
-router.get("/fetch-pdf", (req, res) => {
+router.get("/fetch-pdf/:id", (req, res) => {
     console.log("fetched it");  
 	let file =path.join(__dirname,'../');
-    file=`${file}/Resume${req.body.firstname}.pdf`;
+    file=`${file}/Resume.pdf`;
+   
     console.log(file);  
-	res.download(file)
-    
-    //remove file from this location
+	res.download(file);
+    if(fs.existsSync(file)){
+    setTimeout(()=>{
+        fs.unlinkSync(file);
+    },35);
+}
 
 });
-router.post("/create-pdf", (req, res) => {
+
+router.post("/create-pdf/:id",async (req, res) => {
     console.log("created-pdf");
     
-    console.log(req.user);
+    const user = await User.findById(req.params.id);
+    console.log(user);
+    let file =path.join(__dirname,'../');
+    file=`${file}/Resume.pdf`;
+   
+    
 	pdf.create(pdfTemplate(req.body), options).toFile(`Resume.pdf`, (err) => {
 		if (err) {
 			console.log(err);
-			res.send(Promise.reject());
+            console.log("no")
+			res.status(400).send(Promise.reject());
 		} else res.send(Promise.resolve());
 	});
 });

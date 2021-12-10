@@ -40,7 +40,7 @@ function App() {
         <Route path="/ide">
           {!user ? <Redirect to="/" /> : <Ide />} 
         </Route>
-        <Route path="/resumeBuilder">
+        <Route path="/resumeBuilder/:username">
           {!user ? <Redirect to="/" /> : <Builder/>}
         </Route>
         <Route path="/openboard">

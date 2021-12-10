@@ -17,6 +17,7 @@ export default function Topbar() {
 
   const [suggestions, setSuggestions] = useState([]);
   const { user: currentUser } = useContext(AuthContext);
+  
   const username = currentUser.username;
   useEffect(() => {
     const fetchUser = async () => {

@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {TextField, Button, Container, Divider} from '@material-ui/core';
 import {Card, CardHeader, CardContent} from '@material-ui/core';
 
-
+import { useLocation } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 import {saveAs} from 'file-saver';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
@@ -11,8 +12,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import {Row, Col} from 'react-bootstrap';
 import {Paper, withStyles, Grid} from '@material-ui/core';
-import { axiosIntance } from '../../../config';
-
+import { axiosIntance } from '../../../config'
 const styles = theme => ({
   margin: {
     margin: theme.spacing.unit * 1.5,
@@ -23,6 +23,7 @@ const styles = theme => ({
 });
 
 class Experience extends Component {
+
   continue = e => {
     e.preventDefault ();
     this.props.nextStep ();
@@ -34,12 +35,12 @@ class Experience extends Component {
   };
 
   createAndDownloadPDF = () => {
-    console.log(this.props.values);
+    const id=(this.props.history.location.pathname.split("/"))[2];
     axiosIntance
-      .post ('/auth/create-pdf', this.props.values)
+      .post (`/auth/create-pdf/${id}`, this.props.values)
       .then (() => {
         axiosIntance
-          .get ('/auth/fetch-pdf', {responseType: 'arraybuffer'})
+          .get (`/auth/fetch-pdf/${id}`, {responseType: 'arraybuffer'})
           .then (res => {
             const pdfBlob = new Blob ([res.data], {type: 'application/pdf'});
             saveAs (pdfBlob, `${this.props.values.firstname}'s Resume.pdf`);
@@ -69,6 +70,7 @@ class Experience extends Component {
   render () {
     const {values} = this.props;
     const {classes} = this.props;
+    
 
     return (
       <Paper className={classes.padding}>
@@ -326,4 +328,4 @@ class Experience extends Component {
   }
 }
 
-export default withStyles (styles) (Experience);
+export default withStyles (styles) ( withRouter(Experience));

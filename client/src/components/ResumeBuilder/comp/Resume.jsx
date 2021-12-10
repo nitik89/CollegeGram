@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Profile from './Profile';
 import Education from './Education';
 import Projects from './Projects';
-import Experience from './Experience';
+
 import Extras from './Extras';
 
 export class Resume extends Component {
@@ -182,15 +182,7 @@ export class Resume extends Component {
       link3,
       projectDescription3,
 
-      // Experience Information
-      institute1,
-      position1,
-      duration1,
-      experienceDescription1,
-      institute2,
-      position2,
-      duration2,
-      experienceDescription2,
+      
 
       // Extra Information
       skill1,
@@ -245,20 +237,8 @@ export class Resume extends Component {
             </div>
           </div>
         );
+    
       case 4:
-        return (
-          <div className="App mt-3">
-            <div className="container col-lg-10 mx-auto text-center">
-              <Experience
-                nextStep={this.nextStep}
-                prevStep={this.prevStep}
-                handleChange={this.handleChange}
-                values={values}
-              />
-            </div>
-          </div>
-        );
-      case 5:
         return (
           <div className="App mt-3">
             <div className="container col-lg-10 mx-auto text-center">

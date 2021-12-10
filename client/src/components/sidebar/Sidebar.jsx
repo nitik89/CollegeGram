@@ -13,8 +13,13 @@ import {
 import { Users } from "../../dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+
 
 export default function Sidebar() {
+  const { user: currentUser } = useContext(AuthContext);
+const username = currentUser.username;
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
@@ -38,7 +43,7 @@ export default function Sidebar() {
             </li>{" "}
           </Link>
 
-          <Link to="/resumeBuilder" style={{ textDecoration: "none" }}>
+          <Link to={{ pathname: `/resumeBuilder/${currentUser._id}` }}  style={{ textDecoration: "none" }}>
             <li className="sidebarListItem">
               <Chat className="sidebarIcon" />
               <span className="sidebarListItemText">Resume Builder</span>
