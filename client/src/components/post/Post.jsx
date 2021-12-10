@@ -16,6 +16,7 @@ export default function Post({ post }) {
   const { user: currentUser } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
+  
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
@@ -175,9 +176,7 @@ export default function Post({ post }) {
             />
             <span className="postLikeCounter">{like} people like it</span>
           </div>
-          <div className="postBottomRight">
-            <span className="postCommentText">{post.comment} comments</span>
-          </div>
+          
         </div>
       </div>
     </div>

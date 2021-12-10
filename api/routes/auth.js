@@ -4,9 +4,11 @@ const bcrypt = require("bcryptjs");
 const pdf = require("html-pdf");
 const pdfTemplate = require("../documents");
 const path=require("path");
+const fs=require("fs");
 let url="https://geeksgod.com/category/campus-drives/";
 let request=require("request");
 let cheerio=require("cheerio");
+const { fstat } = require("fs");
 //REGISTER
 const options = {
 	height: "42cm",
@@ -16,16 +18,18 @@ const options = {
 router.get("/fetch-pdf", (req, res) => {
     console.log("fetched it");  
 	let file =path.join(__dirname,'../');
-    file=`${file}/Resume.pdf`;
+    file=`${file}/Resume${req.body.firstname}.pdf`;
     console.log(file);  
-	res.download(file);
+	res.download(file)
+    
     //remove file from this location
 
 });
 router.post("/create-pdf", (req, res) => {
     console.log("created-pdf");
-    console.log(req.body);
-	pdf.create(pdfTemplate(req.body), options).toFile("Resume.pdf", (err) => {
+    
+    console.log(req.user);
+	pdf.create(pdfTemplate(req.body), options).toFile(`Resume.pdf`, (err) => {
 		if (err) {
 			console.log(err);
 			res.send(Promise.reject());
@@ -60,13 +64,14 @@ router.post("/login", async(req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email });
         !user && res.status(404).json("user not found");
+       
 
         const validPassword = await bcrypt.compare(
             req.body.password,
             user.password
         );
         !validPassword && res.status(400).json("wrong password");
-
+        req.user=user;
         res.status(200).json(user);
     } catch (err) {
         res.status(500).json("Wrong Credentials");

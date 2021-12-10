@@ -19,7 +19,8 @@ export default function Rightbar({ user }) {
   useEffect(() => {
     const getFriends = async () => {
       try {
-        const friendList = await axiosIntance.get(`/users/friends/${user._id}`);
+        const friendList = await axiosIntance.get(`/users/friends/${user._id}`);  
+        console.log(friendList);
         setFriends(friendList.data);
       } catch (err) {
         console.log(err);
@@ -131,7 +132,7 @@ export default function Rightbar({ user }) {
                 <>
                   <div class="formPopup" id="popupForm">
                     <form onSubmit={handleClickE} class="formContainer">
-                      <h2>SocialGuruji</h2>
+                      <h2>CollegeGram</h2>
                       <input
                         type="text"
                         id="city"

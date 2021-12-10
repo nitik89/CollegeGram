@@ -30,11 +30,11 @@ const UserSchema = new mongoose.Schema(
     },
     followers: {
       type: Array,
-      default: ["614c694631287dd54f2cdccc", "615c99d10aafa390dc3329c0"],
+      default: [],
     },
     followings: {
       type: Array,
-      default: ["614c694631287dd54f2cdccc", "615c99d10aafa390dc3329c0"],
+      default: [],
     },
     isAdmin: {
       type: Boolean,

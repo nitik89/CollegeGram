@@ -36,7 +36,7 @@ export default function Register() {
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
-          <h3 className="loginLogo">SocialGuruji</h3>
+          <h3 className="loginLogo">CollegeGram</h3>
           <span className="loginDesc">
             Connecting you and your friends always.
           </span>

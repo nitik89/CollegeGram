@@ -128,7 +128,7 @@ export default function Profile() {
                 src={
                   user.coverPicture
                     ? PF + user.coverPicture
-                    : PF + "noCover.png"
+                    : PF + "/person/noCover.png"
                 }
                 alt=""
               />
@@ -137,7 +137,7 @@ export default function Profile() {
                 src={
                   user.profilePicture
                     ? PF + user.profilePicture
-                    : PF + "noAvatar.png"
+                    : PF + "/person/noAvatar.png"
                 }
                 alt=""
               />

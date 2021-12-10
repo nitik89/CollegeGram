@@ -71,7 +71,7 @@ export default function Sidebar() {
           <li className="sidebarListItem">
             <HelpOutline className="sidebarIcon" />
             <Link
-              to={{ pathname: "https://instagram.com/sgursanjam" }}
+              to={{ pathname: "https://www.instagram.com/narang_nitik/" }}
               target="_blank"
               style={{ textDecoration: "none" }}
             >
