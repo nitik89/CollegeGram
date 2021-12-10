@@ -13,6 +13,7 @@ import GetAppIcon from '@material-ui/icons/GetApp';
 import {Row, Col} from 'react-bootstrap';
 import {Paper, withStyles, Grid} from '@material-ui/core';
 import { axiosIntance } from '../../../config'
+import "../../loader.css";
 const styles = theme => ({
   margin: {
     margin: theme.spacing.unit * 1.5,
@@ -23,7 +24,11 @@ const styles = theme => ({
 });
 
 class Experience extends Component {
-
+constructor(props){
+  super(props);
+  this.createAndDownloadPDF=this.createAndDownloadPDF.bind(this);
+}
+  state={isLoading:true};
   continue = e => {
     e.preventDefault ();
     this.props.nextStep ();
@@ -36,19 +41,26 @@ class Experience extends Component {
 
   createAndDownloadPDF = () => {
     const id=(this.props.history.location.pathname.split("/"))[2];
+    this.setState({isLoading:false});
     axiosIntance
       .post (`/auth/create-pdf/${id}`, this.props.values)
       .then (() => {
+        console.log(this.state);  
+        
+        console.log(this.state);  
         axiosIntance
           .get (`/auth/fetch-pdf/${id}`, {responseType: 'arraybuffer'})
           .then (res => {
+            this.setState({isLoading:true});
             const pdfBlob = new Blob ([res.data], {type: 'application/pdf'});
             saveAs (pdfBlob, `${this.props.values.firstname}'s Resume.pdf`);
           })
           .catch (err => {
+            this.setState({isLoading:true});
             console.log (err);
           });
       })
+      
     };
     // axiosIntance.get('/check').then(()=>{
     //   console.log("working");
@@ -73,6 +85,7 @@ class Experience extends Component {
     
 
     return (
+      
       <Paper className={classes.padding}>
         <Card>
           <CardHeader title="Extra Details" />
@@ -321,9 +334,13 @@ class Experience extends Component {
           >
             Download Resume
           </Button>
+          {this.state.isLoading?(<h1>Nitik</h1>):<div className="loader">Loading...</div>}
         </Container>
         <p className="text-center text-muted">Page 5</p>
       </Paper>
+      
+      
+      
     );
   }
 }

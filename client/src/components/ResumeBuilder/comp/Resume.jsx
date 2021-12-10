@@ -4,10 +4,14 @@ import Education from './Education';
 import Projects from './Projects';
 
 import Extras from './Extras';
+import Experience from './Experience';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export class Resume extends Component {
   state = {
     step: 1,
+    
     // Personal Profile Details...
     firstname: '',
     lastname: '',
@@ -198,6 +202,7 @@ export class Resume extends Component {
       interest5,
       interest6,
     };
+    
     switch (step) {
       case 1:
         return (
@@ -224,32 +229,44 @@ export class Resume extends Component {
             </div>
           </div>
         );
-      case 3:
-        return (
-          <div className="App mt-3">
-            <div className="container col-lg-8 mx-auto text-center">
-              <Projects
-                nextStep={this.nextStep}
-                prevStep={this.prevStep}
-                handleChange={this.handleChange}
-                values={values}
-              />
+        case 3:
+          return (
+            <div className="App mt-3">
+              <div className="container col-lg-8 mx-auto text-center">
+                <Projects
+                  nextStep={this.nextStep}
+                  prevStep={this.prevStep}
+                  handleChange={this.handleChange}
+                  values={values}
+                />
+              </div>
             </div>
-          </div>
-        );
-    
-      case 4:
-        return (
-          <div className="App mt-3">
-            <div className="container col-lg-10 mx-auto text-center">
-              <Extras
-                prevStep={this.prevStep}
-                handleChange={this.handleChange}
-                values={values}
-              />
+          );
+        case 4:
+          return (
+            <div className="App mt-3">
+              <div className="container col-lg-10 mx-auto text-center">
+                <Experience
+                  nextStep={this.nextStep}
+                  prevStep={this.prevStep}
+                  handleChange={this.handleChange}
+                  values={values}
+                />
+              </div>
             </div>
-          </div>
-        );
+          );
+        case 5:
+          return (
+            <div className="App mt-3">
+              <div className="container col-lg-10 mx-auto text-center">
+                <Extras
+                  prevStep={this.prevStep}
+                  handleChange={this.handleChange}
+                  values={values}
+                />
+              </div>
+            </div>
+          );
       default: return <div/>;
       }
   }
