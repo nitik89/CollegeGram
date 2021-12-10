@@ -23,7 +23,8 @@ dotenv.config();
 
 mongoose.connect(
     process.env.MONGODB_URL ||
-    "mongodb+srv://sgursanjam:SanjamBhasin1519@cluster0.ahr4s.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }
+    
+    "mongodb+srv://nitik:nitik@cluster0.yv2f5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }
 );
 mongoose.connection.on("connected", () => {
     console.log("Mongodb is connected");

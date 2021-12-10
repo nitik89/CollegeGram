@@ -19,57 +19,53 @@ export const Users = [
   {
     id: 1,
 
-    profilePicture: "1.jpg",
+    profilePicture: "1.jpeg",
     username: "Vivek Dembla",
   },
   {
     id: 2,
-    profilePicture: "2.jpg",
+    profilePicture: "2.jpeg",
     username: "Harneet Singh",
   },
   {
     id: 3,
-    profilePicture: "3.jpg",
+    profilePicture: "3.jpeg",
     username: "Avneet Singh Sohi",
   },
   {
     id: 4,
-    profilePicture: "4.jpg",
+    profilePicture: "4.jpeg",
     username: "Amandeep Singh",
   },
   {
     id: 5,
-    profilePicture: "5.jpg",
+    profilePicture: "5.jpeg",
     username: "Abhimanyiu Kaushik",
   },
   {
     id: 6,
-    profilePicture: "6.jpg",
+    profilePicture: "6.jpeg",
     username: "Arpit Saxena",
   },
   {
     id: 7,
-    profilePicture: "7.jpg",
+    profilePicture: "7.jpeg",
     username: "Karandeep Singh",
   },
   {
     id: 8,
-    profilePicture: "8.jpg",
+    profilePicture: "8.jpeg",
     username: "Archit Sharma",
   },
   {
     id: 9,
-    profilePicture: "9.jpg",
+    profilePicture: "9.jpeg",
     username: "Yajat Khanna",
   },
   {
     id: 10,
-    profilePicture: "10.jpg",
+    profilePicture: "10.jpeg",
     username: "Wasim Akram",
   },
-  {
-    id: 11,
-    profilePicture: "11.jpg",
-    username: "Harshdeep Singh",
-  },
+
 ];
