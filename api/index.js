@@ -21,7 +21,7 @@ const path = require("path");
 app.use(cors());
 dotenv.config();
 
-mongoose.connect(
+mongoose.connect(   
     process.env.MONGODB_URL ||
     
     "mongodb+srv://nitik:nitik@cluster0.yv2f5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }
@@ -62,11 +62,13 @@ app.use("/api/conversations", conversationRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/profile", profileRoute);
 
+if(process.env.NODE_ENV=="production"){
 app.use(express.static(path.join(__dirname, "/client/build")));
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "/client/build", "index.html"));
 });
+}
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("client/build"));
 // }
