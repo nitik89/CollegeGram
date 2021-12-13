@@ -242,20 +242,8 @@ export class Resume extends Component {
               </div>
             </div>
           );
+      
         case 4:
-          return (
-            <div className="App mt-3">
-              <div className="container col-lg-10 mx-auto text-center">
-                <Experience
-                  nextStep={this.nextStep}
-                  prevStep={this.prevStep}
-                  handleChange={this.handleChange}
-                  values={values}
-                />
-              </div>
-            </div>
-          );
-        case 5:
           return (
             <div className="App mt-3">
               <div className="container col-lg-10 mx-auto text-center">

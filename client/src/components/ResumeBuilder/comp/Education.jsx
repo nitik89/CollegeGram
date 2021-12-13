@@ -66,7 +66,7 @@ class Profile extends Component {
                   margin="dense"
                   variant="outlined"
                   name="fromyear1"
-                  label="From Year"
+                  
                   type="date"
                   style={{width: '80%'}}
                   required
@@ -88,7 +88,7 @@ class Profile extends Component {
                   variant="outlined"
                   name="toyear1"
                   type="date"
-                  label="To Year"
+                 
                   style={{width: '80%'}}
                   required
                   value={values.toyear1}
@@ -157,7 +157,7 @@ class Profile extends Component {
                   margin="dense"
                   variant="outlined"
                   name="fromyear2"
-                  label="From Year"
+                  
                   type="date"
                   style={{width: '80%'}}
                   required
@@ -183,7 +183,7 @@ class Profile extends Component {
                   margin="dense"
                   variant="outlined"
                   name="toyear2"
-                  label="To Year"
+                 
                   type="date"
                   style={{width: '80%'}}
                   required

@@ -31,7 +31,7 @@ export default function Login() {
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
-          <h3 className="loginLogo">SocialGuruji</h3>
+          <h3 className="loginLogo">CollegeGram</h3>
           <span className="loginDesc">
             Connecting you and your friends always.
           </span>
@@ -77,7 +77,7 @@ export default function Login() {
         </div>
       </div>
       <Link
-        to={{ pathname: "https://wa.me/919773728407" }}
+        to={{ pathname: "https://wa.me/918727888573" }}
         target="_blank"
         style={{ textDecoration: "none" }}
       >

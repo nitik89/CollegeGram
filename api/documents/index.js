@@ -397,21 +397,19 @@ module.exports = (values) => {
 			<p class="text-muted light mt-0 mb-1">${fromyear2}<span class="mx-2">to</span>${toyear2}</p>
 			<p class="justified mt-0 mb-1" style="font-size: 17px;">${qualification2}</p>
 			<p class="justified mt-0 mb-1" style="font-size: 17px;">${description2}</p>
-            <div class="rela-block caps greyed">Experience</div>
-            <h3>${institute1}</h3>
-            <p class="text-muted light mt-1 mb-2" style="font-size:17px;">${position1}<span class="ml-5 pl-5">Duration: ${duration1}</span></p>
-            <p class="justified" style="font-size:17px;">${experienceDescription1}</p>
-            <h3>${institute2}</h3>
-            <p class="text-muted light mt-1 mb-2" style="font-size:17px;">${position2}<span class="ml-5 pl-5">Duration: ${duration2}</span></p>
-            <p class="justified" style="font-size:17px;">${experienceDescription2}</p>
+            
 			<div class="rela-block caps greyed">Projects</div>
             <h3>${title1}</h3>
             <p class="light mt-1 mb-2" style="font-size:17px;"><span class="mr-2"><i class="fas fa-link"></i></span>${link1}</p>
-            <p class="justified" style="font-size:17px;">${experienceDescription1}</p>
+            <p class="justified" style="font-size:17px;">${projectDescription1}</p>
             
             <h3>${title2}</h3>
-            <p class="light mt-1 mb-2" style="font-size:17px;"><span class="mr-2"><i class="fas fa-link"></i></span>${link1}</p>
-            <p class="justified" style="font-size:17px;">${experienceDescription2}</p>
+            <p class="light mt-1 mb-2" style="font-size:17px;"><span class="mr-2"><i class="fas fa-link"></i></span>${link2}</p>
+            <p class="justified" style="font-size:17px;">${projectDescription2}</p>
+
+			<h3>${title3}</h3>
+            <p class="light mt-1 mb-2" style="font-size:17px;"><span class="mr-2"><i class="fas fa-link"></i></span>${link3}</p>
+            <p class="justified" style="font-size:17px;">${projectDescription3}</p>
 			
         </div>
     </div>

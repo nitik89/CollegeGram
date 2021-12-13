@@ -334,9 +334,9 @@ constructor(props){
           >
             Download Resume
           </Button>
-          {this.state.isLoading?(<h1>Nitik</h1>):<div className="loader">Loading...</div>}
+          {this.state.isLoading?(<h1></h1>):<div className="loader">Loading...</div>}
         </Container>
-        <p className="text-center text-muted">Page 5</p>
+        <p className="text-center text-muted">Page 4</p>
       </Paper>
       
       
